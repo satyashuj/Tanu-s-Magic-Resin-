@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Custom Orders - Tanu's Magic Resin</title>
+<link rel="icon" href="PHOTO.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+<style>
+
+/* BACKGROUND */
+body{
+    background:linear-gradient(135deg,#f8fafc,#e2e8f0);
+}
+
+/* MAIN BOX */
+.section{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+    padding:40px;
+    margin:40px auto;
+    max-width:900px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+.section img{
+    width:300px;
+    border-radius:15px;
+}
+
+/* FORM */
+.form-box{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+/* INPUT */
+.form-box input{
+    padding:12px;
+    width:260px;
+    border-radius:8px;
+    border:1px solid #ddd;
+    outline:none;
+    transition:0.3s;
+}
+
+/* INPUT FOCUS */
+.form-box input:focus{
+    border-color:#6366f1;
+    box-shadow:0 0 10px rgba(99,102,241,0.3);
+}
+
+/* BUTTON BASE */
+.form-box button{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#6366f1;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+/* NEON HOVER */
+.form-box button:hover{
+    background:#4f46e5;
+    transform:scale(1.05);
+    box-shadow:0 0 10px #6366f1,
+               0 0 20px #6366f1,
+               0 0 40px #6366f1;
+}
+
+/* SHINE EFFECT */
+.form-box button::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition:0.5s;
+}
+
+.form-box button:hover::after{
+    left:100%;
+}
+
+/* TEXT */
+h2{ margin-bottom:5px; }
+p{ color:#555; }
+
+/* SEARCH */
+#searchBox{
+    padding:8px;
+    border-radius:5px;
+    border:none;
+    width:160px;
+}
+
+</style>
+
+</head>
+
+<body class="custom-page">
+
+<header>Custom Orders</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="about.html">About</a>
+<a href="custom.html" class="active">Custom Orders</a>
+<a href="contact.html">Contact</a>
+
+<input type="text" id="searchBox" placeholder="Search..." onkeyup="searchProduct()">
+</nav>
+
+<div class="section">
+
+<img src="https://images.unsplash.com/photo-1581091215367-59ab6b7b3e2f">
+
+<div class="form-box">
+
+<h2>Place Custom Order</h2>
+<p>Create your own resin design 💖</p>
+
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Product Type">
+<input type="text" placeholder="Custom Details">
+
+<button onclick="customOrder()">Submit Request</button>
+
+</div>
+
+</div>
+
+<footer>© 2026 Tanu's Magic Resin</footer>
+
+</body>
+</html>

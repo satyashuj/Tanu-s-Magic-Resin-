@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tanu's Magic Resin | Handmade Resin Art, Custom Gifts & Keychains</title>
+
+<meta name="description" content="Tanu's Magic Resin offers premium handmade resin products like keychains, trays, jewellery, coasters & custom gifts. Unique, affordable & perfect for gifting. Order now!">
+
+<meta name="keywords" content="resin art India, handmade resin products, custom resin gifts, name keychains, resin tray, resin jewellery, epoxy art India, personalized gifts">
+
+<meta name="author" content="Tanu's Magic Resin">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (Facebook / WhatsApp share) -->
+<meta property="og:title" content="Tanu's Magic Resin ✨">
+<meta property="og:description" content="Beautiful handmade resin products & custom gifts. Order now!">
+<meta property="og:image" content="https://yourwebsite.com/images/logo.png">
+<meta property="og:url" content="https://yourwebsite.com">
+<meta property="og:type" content="website">
+
+<!-- Twitter SEO -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tanu's Magic Resin">
+<meta name="twitter:description" content="Handmade resin art & custom gifts.">
+<meta name="twitter:image" content="https://yourwebsite.com/images/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" href="PHOTO.png" type="image/png">
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+<style>
+
+/* HERO SECTION */
+.hero{
+    background:url('PHOTO2.png') center/cover;
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-shadow:0 3px 10px black;
+}
+
+/* CATEGORY GRID */
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:30px;
+}
+
+.cat{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    width:180px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.cat:hover{
+    transform:scale(1.05);
+}
+
+.cat img{
+    width:100%;
+    border-radius:10px;
+}
+.top-bar{
+    background:#b76e79;
+    color:white;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.scroll-text{
+    display:inline-block;
+    padding-left:100%;
+    animation:scrollLeft 12s linear infinite;
+}
+
+@keyframes scrollLeft{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-100%); }
+}
+
+/* PRODUCT PREVIEW */
+.products-home{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:20px;
+}
+
+</style>
+
+</head>
+
+<body class="home">
+
+<header>Tanu's Magic Resin ✨</header>
+
+<div style="background:#b76e79; color:white; padding:8px; font-weight:bold;">
+<marquee direction="left" scrollamount="10">
+We are passionate creators of handmade resin products. Each piece is crafted with precision,
+creativity, and attention to detail to deliver premium quality
+</marquee>
+</div>
+</div>
+
+<nav>
+<a href="index.html" class="active">Home</a>
+<a href="products.html"Class="active">Products</a>
+<a href="about.html" class="active">About</a>
+<a href="custom.html" class="active">Custom Orders</a>
+<a href="contact.html" class="active">Contact</a>
+
+<input type="text" id="searchBox" placeholder="Search..." onkeyup="searchProduct()">
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Handmade Resin Art</h1>
+<p>Unique • Custom • Premium</p>
+<a href="products.html">
+<button>Shop Now</button>
+</a>
+</div>
+
+<!-- CATEGORIES -->
+<div class="section">
+<h2>Shop by Category</h2>
+
+<div class="categories">
+
+<div class="cat">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDKY8JkVX8on5b4kPMiQLHhqDLDizCQasKMQ&s">
+<p>Keychains</p>
+</div>
+
+<div class="cat">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvYoH1-pyPMe4ra5CwdFlaghLI9jykt5p8Q&s">
+<p>Jewellery</p>
+</div>
+
+<div class="cat">
+<img src="https://i.ytimg.com/vi/YLDEaacRkOY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAXVsABgZF5tZ6Q6g6B-41DolN5iw">
+<p>Trays</p>
+</div>
+
+<div class="cat">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7-5p9fk3qDlIXSCs_-65bzNtHog0fRkyHEw&s">
+<p>Coasters</p>
+</div>
+
+</div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<div class="section">
+<h2>Featured Products</h2>
+
+<div class="products-home">
+
+<div class="card">
+<img src="https://i.ytimg.com/vi/YG9TRGmJnsE/maxresdefault.jpg">
+<h3>Name Keychain</h3>
+<p>₹249</p>
+<button onclick="order()">Order</button>
+</div>
+
+<div class="card">
+<img src="https://m.media-amazon.com/images/I/91m1OpuphUL.jpg">
+<h3>Resin Tray</h3>
+<p>₹499</p>
+<button onclick="order()">Order</button>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvc-Oeo-TjKvecHkl-mZC9BQA0Yxulz9ZbBA&s">
+<h3>Flower Frame</h3>
+<p>₹699</p>
+<button onclick="order()">Order</button>
+</div>
+
+</div>
+
+</div>
+
+<footer>© 2026 Tanu's Magic Resin | Handmade with Love 💖</footer>
+
+</body>
+</html>

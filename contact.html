@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact - Tanu's Magic Resin</title>
+<link rel="icon" href="PHOTO.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* BACKGROUND */
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+}
+
+/* MAIN SECTION */
+.section{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+    padding:40px;
+    margin:40px auto;
+    max-width:900px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 25px rgba(14,165,233,0.3);
+    animation:fadeIn 1s ease-in-out;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* IMAGE */
+.section img{
+    width:280px;
+    border-radius:15px;
+    box-shadow:0 0 20px #22c55e;
+    transition:0.3s;
+}
+
+.section img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 30px #22c55e;
+}
+
+/* CONTENT */
+.contact-box{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+/* LINKS */
+.contact-box a{
+    color:#38bdf8;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+/* NEON HOVER */
+.contact-box a:hover{
+    color:#22c55e;
+    text-shadow:0 0 10px #22c55e,
+                0 0 20px #22c55e;
+}
+
+/* TITLE */
+h2{
+    text-shadow:0 0 10px #0ea5e9;
+}
+/* BOX */
+.contact-box{
+    background:rgba(255,255,255,0.05);
+    padding:25px;
+    border-radius:15px;
+    max-width:400px;
+    margin:auto;
+    box-shadow:0 0 20px rgba(14,165,233,0.3);
+}
+
+/* ITEM */
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:15px 0;
+    padding:10px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+/* HOVER EFFECT */
+.contact-item:hover{
+    background:rgba(255,255,255,0.08);
+    transform:translateX(5px);
+}
+
+/* ICON */
+.contact-item img{
+    width:30px;
+}
+
+/* TEXT */
+.contact-item strong{
+    font-size:14px;
+    color:#94a3b8;
+}
+
+/* LINKS */
+.contact-item a{
+    color:#38bdf8;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* NEON HOVER */
+.contact-item a:hover{
+    color:#22c55e;
+    text-shadow:0 0 10px #22c55e;
+}
+/* SEARCH */
+#searchBox{
+    padding:8px;
+    border-radius:5px;
+    border:none;
+    width:160px;
+}
+
+</style>
+
+</head>
+
+<body class="contact-page">
+
+<header>Contact Us</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="about.html">About</a>
+<a href="custom.html">Custom Orders</a>
+<a href="contact.html" class="active">Contact</a>
+
+<input type="text" id="searchBox" placeholder="Search..." onkeyup="searchProduct()">
+</nav>
+
+<div class="section">
+
+<!-- IMAGE -->
+<img src="About.png" alt="Contact Us">
+
+<!-- CONTACT INFO -->
+<div class="contact-box">
+
+<h2>Get in Touch</h2>
+<p>We are here to help you with your custom resin needs 💖</p>
+
+<div class="contact-box">
+
+<h2>Contact Us 💬</h2>
+
+<!-- WHATSAPP -->
+<div class="contact-item">
+<img src="https://img.icons8.com/color/30/whatsapp.png">
+<div>
+<strong>WhatsApp</strong><br>
+<a href="https://wa.me/917347651187?text=Hello%20I%20want%20to%20order%20a%20resin%20product" target="_blank">
++91 7347651187
+</a>
+</div>
+</div>
+
+<!-- INSTAGRAM -->
+<div class="contact-item">
+<img src="https://img.icons8.com/color/30/instagram-new.png">
+<div>
+<strong>Instagram</strong><br>
+<a href="https://www.instagram.com/tanusmagicresin?utm_source=qr&igsh=YzdrNHV3cGhrM2Ix" target="_blank">  
+@TANUSMAGICRESIN
+</a>
+</div>
+</div>
+
+<!-- EMAIL -->
+<div class="contact-item">
+<img src="https://img.icons8.com/color/30/gmail-new.png">
+<div>
+<strong>Email</strong><br>
+<a href="https://mail.google.com/mail/?view=cm&to=tanupreetk35@gmail.com" target="_blank">
+tanupreetk35@gmail.com
+</a>
+</div>
+</div>
+
+<!-- LOCATION -->
+<div class="contact-item">
+<img src="https://img.icons8.com/color/30/marker.png">
+<div>
+<strong>Location</strong><br>
+<a href="https://www.google.com/maps?q=26.469833,80.298722" target="_blank">
+Kanpur, Uttar Pradesh , India
+</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer>© 2026 Tanu's Magic Resin | Contact Anytime 💬</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

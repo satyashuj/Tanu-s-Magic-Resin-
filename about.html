@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About - Tanu's Magic Resin</title>
+<link rel="icon" href="PHOTO.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* SECTION BASE */
+.section{
+    padding:40px;
+    margin:20px;
+    border-radius:15px;
+    color:white;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* IMAGE */
+.section img{
+    width:250px;
+    border-radius:15px;
+    box-shadow:0 0 15px white;
+}
+
+/* TEXT */
+.content{
+    flex:1;
+}
+
+/* NEON COLORS */
+.section:nth-of-type(1){
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    box-shadow:0 0 20px #3b82f6;
+}
+.section:nth-of-type(2){
+    background:linear-gradient(135deg,#052e16,#166534);
+    box-shadow:0 0 20px #22c55e;
+}
+.section:nth-of-type(3){
+    background:linear-gradient(135deg,#3b0764,#6b21a8);
+    box-shadow:0 0 20px #a855f7;
+}
+
+/* HEADINGS */
+.section h2{
+    text-shadow:0 0 10px white;
+}
+
+/* ABOUT ME SPECIAL */
+.about-me{
+    display:block;
+    text-align:center;
+    background:linear-gradient(135deg,#fdf2f8,#fce7f3);
+    color:#333;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ABOUT TEXT */
+/* FULL CENTER FIX */
+.about-me{
+    max-width:800px;
+    margin:40px auto;   /* center horizontally */
+    text-align:center;
+    display:block;
+    padding:40px;
+}
+
+/* BODY CENTER SUPPORT */
+body{
+    display:block;
+}
+.highlight{
+    font-weight:bold;
+    color:#be185d;
+}
+
+.features{
+    margin:15px 0;
+    font-weight:bold;
+    color:#db2777;
+}
+
+.thankyou{
+    margin-top:10px;
+    font-style:italic;
+    color:#9d174d;
+}
+
+/* SEARCH */
+#searchBox{
+    padding:8px;
+    border-radius:5px;
+    border:none;
+    width:160px;
+}
+
+</style>
+
+</head>
+
+<body class="about-page">
+
+<header>About Us</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="about.html" class="active">About</a>
+<a href="custom.html">Custom Orders</a>
+<a href="contact.html">Contact</a>
+
+<input type="text" id="searchBox" placeholder="Search..." onkeyup="searchProduct()">
+</nav>
+
+<!-- SECTION 1 -->
+<div class="section">
+<img src="IMG3.png">
+<div class="content">
+<h2>Who We Are</h2>
+<p>
+We are passionate creators of handmade resin products. Each piece is crafted with precision,
+creativity, and attention to detail to deliver premium quality designs.
+</p>
+</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+<img src="OFFER.png">
+<div class="content">
+<h2>What We Offer</h2>
+<p>
+✔ Resin trays, keychains, wall art<br>
+✔ Customized name products<br>
+✔ Unique gifting solutions<br>
+✔ High-quality epoxy finish
+</p>
+</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+<img src="CONE.png">
+<div class="content">
+<h2>Why Choose Us</h2>
+<p>
+✔ 100% Handmade<br>
+✔ Custom designs available<br>
+✔ Affordable pricing<br>
+✔ Customer satisfaction first
+</p>
+</div>
+</div>
+
+<!-- ABOUT ME -->
+<div class="section about-me">
+
+<h2>About Us 💖</h2>
+
+<p class="highlight">Welcome to our resin art world 💖</p>
+
+<p>
+We create beautiful handmade resin products that turn your memories into something special.
+Each item is made with love, care, and creativity to give you a unique and personal touch.
+</p>
+
+<p>
+From customized name keychains to memory gifts, coasters, and decorative pieces, every product
+is designed to make your moments unforgettable.
+</p>
+
+<p>
+Our goal is to provide high-quality, affordable, and meaningful gifts for every occasion.
+</p>
+
+<div class="features">
+<p>✨ 100% Handmade</p>
+<p>✨ Custom Designs Available</p>
+<p>✨ Perfect for Gifting</p>
+</div>
+
+<p class="thankyou">Thank you for supporting small business 💕</p>
+
+</div>
+
+<footer>© 2026 Tanu's Magic Resin | Handmade with Love 💖</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
