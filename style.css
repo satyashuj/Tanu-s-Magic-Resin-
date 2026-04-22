@@ -380,3 +380,108 @@ footer{
 .contact-page nav{ background:#075985; }
 .contact-page button{ background:#0ea5e9; }
 .contact-page footer{ background:#0c4a6e; }
+
+/* ===================== */
+/* MOBILE (max 600px) */
+/* ===================== */
+@media (max-width:600px){
+
+header{
+    font-size:18px;
+    padding:10px;
+}
+
+nav{
+    flex-direction:column;
+    gap:5px;
+}
+
+nav a{
+    width:100%;
+    text-align:center;
+}
+
+#searchBox{
+    width:90%;
+}
+
+.hero{
+    height:250px;
+    text-align:center;
+    padding:10px;
+}
+
+.hero h1{
+    font-size:22px;
+}
+
+.section{
+    padding:20px;
+    margin:10px;
+    flex-direction:column;
+}
+
+.section img{
+    width:100%;
+}
+
+.products-home,
+.categories{
+    flex-direction:column;
+    align-items:center;
+}
+
+.card, .cat{
+    width:90%;
+}
+
+}
+
+/* ===================== */
+/* TABLET (601px - 900px) */
+/* ===================== */
+@media (min-width:601px) and (max-width:900px){
+
+nav{
+    flex-wrap:wrap;
+}
+
+.hero{
+    height:300px;
+}
+
+.section{
+    flex-direction:column;
+    text-align:center;
+}
+
+.section img{
+    width:80%;
+}
+
+.products-home,
+.categories{
+    justify-content:center;
+}
+
+.card, .cat{
+    width:45%;
+}
+
+}
+
+/* ===================== */
+/* LARGE SCREENS (1200px+) */
+/* ===================== */
+@media (min-width:1200px){
+
+.section{
+    max-width:1100px;
+    margin:auto;
+}
+
+.hero{
+    height:450px;
+}
+
+}
