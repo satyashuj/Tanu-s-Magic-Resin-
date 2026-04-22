@@ -467,7 +467,10 @@ nav{
 .card, .cat{
     width:45%;
 }
-
+img{
+    max-width:100%;
+    height:auto;
+}
 }
 
 /* ===================== */
