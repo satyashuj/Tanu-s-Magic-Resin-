@@ -52,11 +52,57 @@
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 </head>
+    
 <style>
 
-/* HERO SECTION */
+/* GLOBAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* HEADER FIX */
+.main-header{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    align-items:center;
+    padding:15px;
+    background:#111;
+    color:white;
+    font-size:22px;
+}
+
+/* TITLE CENTER */
+.main-header span{
+    justify-self:center;
+}
+
+/* BUTTON RIGHT */
+#likeBtn{
+    justify-self:end;
+    background:#ec4899;
+    border:none;
+    padding:8px 15px;
+    border-radius:20px;
+    color:white;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+#likeBtn:hover{
+    background:#db2777;
+    transform:scale(1.1);
+}
+
+/* HERO */
 .hero{
-    background:url('PHOTO2.png') center/cover;
+    background:url('PHOTO2.png') center/cover no-repeat;
     height:400px;
     display:flex;
     flex-direction:column;
@@ -64,9 +110,22 @@
     align-items:center;
     color:white;
     text-shadow:0 3px 10px black;
+    position:relative;
 }
 
-/* CATEGORY GRID */
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+}
+
+.hero *{
+    position:relative;
+}
+
+/* CATEGORY */
 .categories{
     display:flex;
     justify-content:center;
@@ -82,36 +141,13 @@
     width:180px;
     text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
 }
 
 .cat:hover{
     transform:scale(1.05);
 }
 
-.cat img{
-    width:100%;
-    border-radius:10px;
-}
-.top-bar{
-    background:#b76e79;
-    color:white;
-    overflow:hidden;
-    white-space:nowrap;
-}
-
-.scroll-text{
-    display:inline-block;
-    padding-left:100%;
-    animation:scrollLeft 12s linear infinite;
-}
-
-@keyframes scrollLeft{
-    0%{ transform:translateX(0); }
-    100%{ transform:translateX(-100%); }
-}
-
-/* PRODUCT PREVIEW */
+/* PRODUCTS */
 .products-home{
     display:flex;
     justify-content:center;
@@ -120,7 +156,19 @@
     padding:20px;
 }
 
+/* RESPONSIVE */
+@media (max-width:600px){
+    .categories, .products-home{
+        flex-direction:column;
+        align-items:center;
+    }
+    .cat{
+        width:90%;
+    }
+}
+
 </style>
+
 
 </head>
 
