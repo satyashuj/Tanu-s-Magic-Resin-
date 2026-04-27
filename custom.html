@@ -7,13 +7,14 @@
 <title>Custom Orders - Tanu's Magic Resin</title>
 <link rel="icon" href="PHOTO.png" type="image/png">
 <link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
 
 <style>
 
 /* BACKGROUND */
 body{
     background:linear-gradient(135deg,#f8fafc,#e2e8f0);
+    margin:0;
+    font-family:Arial;
 }
 
 /* MAIN BOX */
@@ -52,16 +53,9 @@ body{
     border-radius:8px;
     border:1px solid #ddd;
     outline:none;
-    transition:0.3s;
 }
 
-/* INPUT FOCUS */
-.form-box input:focus{
-    border-color:#6366f1;
-    box-shadow:0 0 10px rgba(99,102,241,0.3);
-}
-
-/* BUTTON BASE */
+/* BUTTON */
 .form-box button{
     padding:12px;
     border:none;
@@ -70,53 +64,44 @@ body{
     color:white;
     font-weight:bold;
     cursor:pointer;
-    transition:0.3s;
-    position:relative;
-    overflow:hidden;
 }
 
-/* NEON HOVER */
-.form-box button:hover{
-    background:#4f46e5;
-    transform:scale(1.05);
-    box-shadow:0 0 10px #6366f1,
-               0 0 20px #6366f1,
-               0 0 40px #6366f1;
+/* HEADER */
+header{
+    background:#ff4d6d;
+    color:white;
+    text-align:center;
+    padding:15px;
 }
 
-/* SHINE EFFECT */
-.form-box button::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-100%;
-    width:100%;
-    height:100%;
-    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition:0.5s;
+/* NAV */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding:10px;
+    background:#222;
 }
 
-.form-box button:hover::after{
-    left:100%;
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 15px;
 }
 
-/* TEXT */
-h2{ margin-bottom:5px; }
-p{ color:#555; }
-
-/* SEARCH */
-#searchBox{
-    padding:8px;
-    border-radius:5px;
-    border:none;
-    width:160px;
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:15px;
+    background:#111;
+    color:white;
 }
 
 </style>
 
 </head>
 
-<body class="custom-page">
+<body>
 
 <header>Custom Orders</header>
 
@@ -126,8 +111,6 @@ p{ color:#555; }
 <a href="about.html">About</a>
 <a href="custom.html" class="active">Custom Orders</a>
 <a href="contact.html">Contact</a>
-
-<input type="text" id="searchBox" placeholder="Search..." onkeyup="searchProduct()">
 </nav>
 
 <div class="section">
@@ -139,15 +122,48 @@ p{ color:#555; }
 <h2>Place Custom Order</h2>
 <p>Create your own resin design 💖</p>
 
-<input type="text" placeholder="Your Name">
-<input type="text" placeholder="Product Type">
-<input type="text" placeholder="Custom Details">
+<!-- ✅ IDs added -->
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="product" placeholder="Product Type">
+<input type="text" id="details" placeholder="Custom Details">
 
 <button onclick="customOrder()">Submit Request</button>
 
+<p id="orderMsg"></p>
+
 </div>
 
 </div>
+
+<script>
+
+// ✅ UNIQUE ORDER ID (BEST VERSION)
+function generateOrderId() {
+    return "ORD-" + Date.now();
+}
+
+// MAIN FUNCTION
+function customOrder(){
+
+    let name = document.getElementById("name").value;
+    let product = document.getElementById("product").value;
+    let details = document.getElementById("details").value;
+
+    if(name === "" || product === "" || details === ""){
+        alert("Please fill all fields!");
+        return;
+    }
+
+    let orderId = generateOrderId();
+
+    let msg = `✨ Custom Order Request ✨%0A%0AOrder ID: ${orderId}%0AName: ${name}%0AProduct: ${product}%0ADetails: ${details}`;
+
+    window.open(`https://wa.me/917347651187?text=${msg}`);
+
+    // Show on page
+    document.getElementById("orderMsg").innerText = "Your Order ID: " + orderId;
+}
+</script>
 
 <footer>© 2026 Tanu's Magic Resin</footer>
 
