@@ -134,20 +134,16 @@ footer{
 </div>
 
 </div>
-
 <script>
-
-// ✅ UNIQUE ORDER ID (BEST VERSION)
 function generateOrderId() {
     return "ORD-" + Date.now();
 }
 
-// MAIN FUNCTION
 function customOrder(){
 
-    let name = document.getElementById("name").value;
-    let product = document.getElementById("product").value;
-    let details = document.getElementById("details").value;
+    let name = document.getElementById("name").value.trim();
+    let product = document.getElementById("product").value.trim();
+    let details = document.getElementById("details").value.trim();
 
     if(name === "" || product === "" || details === ""){
         alert("Please fill all fields!");
@@ -156,15 +152,25 @@ function customOrder(){
 
     let orderId = generateOrderId();
 
-    let msg = `✨ Custom Order Request ✨%0A%0AOrder ID: ${orderId}%0AName: ${name}%0AProduct: ${product}%0ADetails: ${details}`;
+    // ✅ Proper formatted message
+    let msg = 
+`✨ Custom Order Request ✨
 
-    window.open(`https://wa.me/917347651187?text=${msg}`);
+Order ID: ${orderId}
+Name: ${name}
+Product: ${product}
+Details: ${details}`;
+
+    // ✅ Encoding fix (VERY IMPORTANT)
+    let url = "https://wa.me/917347651187?text=" + encodeURIComponent(msg);
+
+    // Open WhatsApp
+    window.open(url, "_blank");
 
     // Show on page
     document.getElementById("orderMsg").innerText = "Your Order ID: " + orderId;
 }
 </script>
-
 <footer>© 2026 Tanu's Magic Resin</footer>
 
 </body>
