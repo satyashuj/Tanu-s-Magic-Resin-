@@ -232,6 +232,27 @@ img{
         0 0 10px #6a5acd,
         0 0 20px #00c9a7;
 }
+
+    .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 24px;
+    padding: 15px 18px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+/* hover */
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #25D366;
+}
 /* RESPONSIVE */
 @media (max-width:600px){
     .categories, .products-home{
@@ -263,6 +284,11 @@ creativity, and attention to detail to deliver premium quality
 </div>
 </div>
 
+<a href="https://wa.me/917347651187?text=Return%20Request%0AName:%20%0AOrder%20ID:%20%0AIssue:%20Damaged"
+   class="whatsapp-btn" target="_blank">
+   💬
+</a>
+    
 <nav>
 <a href="index.html" class="active">Home</a>
 <a href="products.html"class="active">Products</a> 
