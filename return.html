@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Return Request | Tanu's Magic Resin</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fce4ec;
+    margin: 0;
+}
+
+/* MAIN FIX (no 100vh center) */
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;   /* center properly */
+    gap: 20px;
+}
+
+/* CARDS */
+.conditions, .container {
+    width: 48%;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #ff4081;
+}
+
+/* TEXT */
+.conditions p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* INPUTS */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ffc1e3;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+/* COUNT */
+.character-count {
+    text-align: right;
+    font-size: 12px;
+    color: gray;
+}
+
+/* CAPTCHA */
+#captchaText {
+    background: #eee;
+    padding: 8px 12px;
+    border-radius: 5px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+/* BUTTON */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #e91e63;
+}
+
+/* HEADER */
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+/* BODY GAP (important) */
+body {
+    padding-top: 70px;
+}
+
+/* FOOTER */
+.footer {
+    background: #232f3e;
+    color: white;
+    margin-top: 50px;
+}
+
+/* BACK TO TOP */
+.back-top {
+    text-align: center;
+    padding: 15px;
+    background: #37475a;
+    cursor: pointer;
+}
+
+/* GRID */
+.footer-main {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+/* TEXT */
+.footer-main p {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+/* HOVER MULTICOLOR */
+.footer-main p:hover {
+    color: #ff4d6d;
+}
+.policy-img {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.policy-img img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+/* BOTTOM */
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background: #131a22;
+}
+/* SUCCESS */
+.success-msg {
+    display: none;
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+}
+</style>
+</head>
+<header class="main-header">
+    Tanu's Magic Resin ✨
+</header>
+<body>
+
+<div class="main">
+
+    <!-- LEFT -->
+    <div class="conditions">
+        <h2>Return Policy</h2>
+        <p>✔ Agar product tuta hua ho tabhi return hoga</p>
+        <p>❌ Warna return accept nahi hoga</p>
+        <p>⏱ 3 days ke andar request karni hogi</p>
+        <p>🎨 Customized product hai</p>
+
+<div class="policy-img">
+    <img src="iimage.jpg" alt="Resin Product">
+</div>
+
+    </div>
+
+
+
+
+    <!-- RIGHT -->
+    <div class="container">
+        <h2>Return Form</h2>
+
+        <form id="returnForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="orderId" placeholder="Order ID" required>
+
+            <p><b>Issue:</b> Product Damaged</p>
+
+            <textarea id="desc" maxlength="200" placeholder="Describe damage..." required></textarea>
+            <div class="character-count" id="count">0/200</div>
+
+            <input type="file" required>
+
+            <!-- CAPTCHA -->
+            <div>
+                <p><b>Captcha:</b></p>
+                <span id="captchaText"></span>
+                <input type="text" id="captchaInput" maxlength="5" placeholder="Enter Captcha" required>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+
+            <p class="success-msg" id="successMsg">Request Sent ✅</p>
+        </form>
+    </div>
+
+</div>
+
+<script>
+
+// CHARACTER COUNT
+let desc = document.getElementById("desc");
+let count = document.getElementById("count");
+
+desc.oninput = () => {
+    count.innerText = desc.value.length + "/200";
+};
+
+// CAPTCHA
+function generateCaptcha() {
+    const chars = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%&*";
+    let captcha = "";
+    for (let i = 0; i < 5; i++) {
+        captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    document.getElementById("captchaText").innerText = captcha;
+}
+
+window.onload = generateCaptcha;
+
+// FORM SUBMIT
+document.getElementById("returnForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let userCaptcha = document.getElementById("captchaInput").value;
+    let realCaptcha = document.getElementById("captchaText").innerText;
+
+    if(userCaptcha !== realCaptcha){
+        alert("Captcha incorrect!");
+        generateCaptcha();
+        return;
+    }
+
+    let name = document.getElementById("name").value;
+    let order = document.getElementById("orderId").value;
+    let message = desc.value;
+
+    // WhatsApp
+    let msg = `Return Request\nName: ${name}\nOrder ID: ${order}\nIssue: Damaged\nMessage: ${message}`;
+
+    window.open(`https://wa.me/917347651187?text=${encodeURIComponent(msg)}`);
+
+    document.getElementById("successMsg").style.display = "block";
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+</script>
+<footer class="footer">
+
+    <div class="back-top" onclick="scrollToTop()">Back to top</div>
+
+    <div class="footer-main">
+        <div>
+            <h3>Get to Know Us</h3>
+            <p>About Us</p>
+            <p>Careers</p>
+            <p>Press</p>
+        </div>
+
+        <div>
+            <h3>Connect with Us</h3>
+            <p>Instagram</p>
+            <p>WhatsApp</p>
+        </div>
+
+        <div>
+            <h3>Help</h3>
+            <p>Return Policy</p>
+            <p>Support</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Tanu's Magic Resin | Handmade with Love 💖
+    </div>
+
+</footer>
+</body>
+</html>
